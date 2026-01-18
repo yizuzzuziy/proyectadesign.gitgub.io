@@ -167,20 +167,21 @@
 
         /* --- TYPOGRAPHY ADJUSTMENTS FOR MOBILE --- */
         .hero-title {
-            /* Mobile first size: Larger relative to screen width */
-            font-size: 15vw; 
-            line-height: 0.9;
+            /* FIX: Reduced from 15vw to 11vw to fit "ARCHITECTURE" on small screens */
+            font-size: 11vw; 
+            line-height: 1; /* More breathing room */
             font-weight: 500;
             margin-bottom: 1.5rem;
             color: white;
+            word-wrap: break-word; /* Prevents overflow */
+            hyphens: auto;
         }
         
         .hero-subtitle {
-            /* Mobile first size: Smaller, readable */
             font-size: 0.9rem;
             max-width: 600px;
             color: #ddd;
-            border-left: 1px solid white; /* Thinner line on mobile */
+            border-left: 1px solid white;
             padding-left: 15px;
             line-height: 1.4;
         }
@@ -189,6 +190,7 @@
         @media(min-width: 768px) {
             .hero-title {
                 font-size: 9vw; /* Original Desktop Size */
+                line-height: 0.85;
                 margin-bottom: 2rem;
             }
             .hero-subtitle {
