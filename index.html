@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecta Design | Architecture & Engineering</title>
     
-    <!-- ORIGINAL FONTS RESTORED: Space Grotesk & Inter -->
+    <!-- Fonts: Space Grotesk (Raw/Technical) & Inter (Functional) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
@@ -28,7 +28,6 @@
             --accent-red: #FF3333; /* Residential */
             --grid-line: #222;
             
-            /* ORIGINAL FONTS */
             --font-head: 'Space Grotesk', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
@@ -38,7 +37,7 @@
             cursor: none; /* Custom cursor logic */
         }
 
-        /* Scrollbar styling */
+        /* Scrollbar styling for modal */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -68,7 +67,7 @@
             letter-spacing: -0.02em;
         }
 
-        /* --- CUSTOM CURSOR --- */
+        /* --- CUSTOM CURSOR (FIXED Z-INDEX) --- */
         .cursor {
             position: fixed;
             top: 0;
@@ -101,7 +100,7 @@
             font-weight: 700;
         }
 
-        /* --- PRELOADER --- */
+        /* --- PRELOADER (GEOMETRIC STYLE) --- */
         .preloader {
             position: fixed;
             top: 0;
@@ -298,16 +297,20 @@
         </div>
     </div>
 
-    <!-- HEADER (LOGO ONLY) -->
+    <!-- HEADER (LOGO ONLY, NO MENU) -->
     <header class="fixed top-0 left-0 p-6 z-50">
-        <!-- Logo file must be named logo.png and be in the same folder -->
-        <img src="./logo.png" alt="Proyecta Design" class="h-18 md:h-22 object-contain">
+        <!-- 
+            IMPORTANTE: Guarda la imagen de tu logo como "logo.png" 
+            en la misma carpeta que este archivo. 
+        -->
+        <img src="./logo.png" alt="Proyecta Design" class="h-36 md:h-40 object-contain">
     </header>
 
     <main>
         <!-- HERO -->
         <section class="hero" id="home">
             <div class="hero-bg-container">
+                <!-- High Quality Architecture Images -->
                 <img src="https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=2560&auto=format&fit=crop" class="hero-slide active" alt="Slide 1">
                 <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2560&auto=format&fit=crop" class="hero-slide" alt="Slide 2">
                 <img src="https://images.unsplash.com/photo-1470058869958-2a77ade41c02?q=80&w=2560&auto=format&fit=crop" class="hero-slide" alt="Slide 3">
@@ -673,9 +676,8 @@
             }
         });
 
-        // 6. PARALLAX FIX (APPLIED TO CONTAINER)
-        // Antes estaba en .hero-title, ahora se mueve todo el bloque .hero-content junto.
-        gsap.to(".hero-content", {
+        // 6. PARALLAX
+        gsap.to(".hero-title", {
             yPercent: 50, ease: "none",
             scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
         });
